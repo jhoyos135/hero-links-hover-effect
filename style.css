@@ -1,0 +1,247 @@
+
+h1,h2,h3,h4,h5,h6 {
+	color: white;
+}
+p {
+	color: white;
+}
+
+
+/*========gallery============*/
+.item .separetor {
+	width: 30px;
+	border: 3px solid white;
+	position: relative;
+	top: 100px;
+}
+
+.item:not(.active) > h1.front-title, .item:not(.active) p{
+	display: block;
+
+}
+
+.item h1.back-title {
+	font-weight: 600;
+	display: block;
+	position: relative;
+	align-content: center;
+	text-align: center;
+	top: 33.3%;
+    line-height: 2em;
+	font-size: 30px; 
+}
+#hero .item p {
+	display: block;
+	text-align: center;
+	align-content: center;
+	position: relative;
+  	padding: 10px;
+	top: 25%;
+    line-height: 2em;
+	font-weight: 200;
+	font-size: 25px; 
+	text-transform: uppercase;
+}
+
+.gallery-container {
+	padding: 0 !important;
+	width: 100%;
+	height: 100vh;
+	border: 10px solid white;
+	-webkit-box-sizing: border-box;
+		  box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+	padding: 15px;
+
+}
+.gallery-container:before {
+	content: "";
+	position: absolute;
+	top: 0%;
+	width: 100%;
+	height: 50vh;
+	border-top: 20px solid white;
+	border-bottom: 20px solid white;
+	z-index: 10;
+	-webkit-box-sizing: border-box;
+		  box-sizing: border-box;
+	pointer-events: none;
+}
+.gallery-container:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 33.3%;
+	right: 33.3%;
+	border-left: 20px solid white;
+	border-right: 20px solid white;	
+	height: 100%;
+	z-index: 10;
+	-webkit-box-sizing: border-box;
+		  box-sizing: border-box;
+	pointer-events: none;
+}
+.gallery-container .items-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  *zoom: 1;
+  z-index: 1;
+	
+}
+.gallery-container {
+	padding: 45px !important;
+	border: 0;
+}
+.gallery-container .overlay-image {
+  border: 45px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: visibility 0s ease 0.5s,  opacity 0.5s ease,  background 0.5s ease,  -webkit-transform 0.01s ease;
+  transition: visibility 0s ease 0.5s,  opacity 0.5s ease,  background 0.5s ease,  -webkit-transform 0.01s ease;
+  transition: visibility 0s ease 0.5s,  opacity 0.5s ease,  background 0.5s ease,  transform 0.01s ease;
+  transition: visibility 0s ease 0.5s,  opacity 0.5s ease,  background 0.5s ease,  transform 0.01s ease,  -webkit-transform 0.01s ease;
+  z-index: 2;
+  pointer-events:none;
+}
+.gallery-container .overlay-image.active {
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 1;
+	/*by changing the scale value, you can have a zoom effect*/
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: visibility 0s,  opacity 0.5s,  background 0.5s ease,  -webkit-transform 4.5s ease;
+  transition: visibility 0s,  opacity 0.5s,  background 0.5s ease,  -webkit-transform 4.5s ease;
+  transition: visibility 0s,  opacity 0.5s,  background 0.5s ease,  transform 4.5s ease;
+  transition: visibility 0s,  opacity 0.5s,  background 0.5s ease,  transform 4.5s ease,  -webkit-transform 4.5s ease;
+	position: absolute;
+
+
+}
+.gallery-container .item {
+  width: 33.33%;
+  height: 50%;
+  float: left;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  align-content: center;
+	text-decoration: none !important;
+
+
+}
+.gallery-container .item:hover {
+	border: none;
+}
+.gallery-container .item img {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  margin: auto;
+  filter: grayscale(0.7);
+}
+ .item.active {
+  width: 33.33%;
+  height: 33.33%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.gallery-container .item.active img {
+	z-index: 3;
+	opacity: 0;
+}
+.gallery-container .item.active {
+	width: 33.3%;
+	height: 50%;
+	z-index: 3;
+    background: rgba(51, 42, 133, 1);
+}
+
+.outro .gallery-container a {
+	border-color: transparent;
+	transition: border .7s, background .7s;
+}
+
+.outro .gallery-container a:hover,
+.outro .items-container.active .gallery-container a:hover {
+	border: none;
+	background: transparent !important;
+	transition: border .7s;
+}
+.outro h1, .outro span, .outro .item .separetor, .outro p {
+	opacity: 0;
+	transition: 1s ease ;
+	border-color: transparent;
+}
+.outro {
+	transition: 1s all ease-out 2s;
+}
+
+.outro .gallery-container  {
+	transition: 1s ease 0.5s ;
+	opacity: 0.6;
+	border: none;
+	
+}
+
+.outro .gallery-container:after, .outro .gallery-container:before, .outro .item  {
+	opacity: 0;
+	transition: 1s ease ;
+	border-color: transparent;
+}
+.outro .overlay-image.active, .outro .item.active {
+	cursor: default;
+}
+
+.container_items {
+	display: grid;
+
+}
+.loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin-top: -30px;
+	margin-left: -30px;
+	border-top: 2px solid rgba(51, 42, 133, 1);
+	border-right: 2px solid transparent;
+    border-radius: 50%;
+	z-index: 9;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
+
